@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>La classe de maîtresse Emeline</title>
+<meta name="description" content="Les chants de la classe, avec les vidéos et les paroles, pour chanter à la maison.">
+<meta property="og:title" content="La classe de maîtresse Emeline">
+<meta property="og:description" content="Les chants de la classe, à chanter à la maison 🎶">
+<meta property="og:image" content="img/partage.jpg">
+<meta name="theme-color" content="#7E9A68">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F1E7; --card:#FFFFFF; --tx:#26301F; --mut:#5F6B57;
+  --sauge:#7E9A68; --sauge-cl:#E3EBD8; --bleu:#2F5FD0; --bleu-cl:#E2EAFB;
+  --miel:#C9803F; --miel-cl:#F8E7D4; --bd:#E1DECF; --ombre:0 6px 22px rgba(60,70,40,.10);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1F17; --card:#252B21; --tx:#F0EEE4; --mut:#B5BCA9;
+  --sauge:#A3BE8C; --sauge-cl:#323D2A; --bleu:#8FAEFF; --bleu-cl:#25304D;
+  --miel:#E8A766; --miel-cl:#3E2F20; --bd:#3A4133; --ombre:0 6px 22px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --bg:#1A1F17; --card:#252B21; --tx:#F0EEE4; --mut:#B5BCA9;
+  --sauge:#A3BE8C; --sauge-cl:#323D2A; --bleu:#8FAEFF; --bleu-cl:#25304D;
+  --miel:#E8A766; --miel-cl:#3E2F20; --bd:#3A4133; --ombre:0 6px 22px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.6 'Nunito',system-ui,sans-serif;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:'Fredoka',system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0}
+a{color:var(--bleu)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--miel);outline-offset:2px;border-radius:8px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* --- barre du haut --- */
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);
+  padding-top:env(safe-area-inset-top,0px)}
+.top .wrap{display:flex;align-items:center;gap:10px;height:60px}
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--sauge);flex:none}
+.top .nom{font-family:'Fredoka',sans-serif;font-weight:600;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none;color:var(--tx)}
+.top .nom small{display:block;font:600 12px 'Nunito',sans-serif;color:var(--mut);letter-spacing:.02em}
+
+/* --- accueil --- */
+.hero{padding:28px 0 8px;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:center}
+.hero h1{font-size:clamp(30px,6vw,46px);font-weight:700}
+.hero h1 span{color:var(--bleu);display:block}
+.hero p{color:var(--mut);margin:12px 0 0;max-width:46ch}
+.cadre{position:relative;aspect-ratio:1;justify-self:center;width:100%;max-width:260px}
+.cadre::before{content:"";position:absolute;inset:-10px;border-radius:46% 54% 42% 58%/55% 45% 55% 45%;
+  background:var(--sauge-cl);transform:rotate(-6deg)}
+.cadre img{position:relative;width:100%;height:100%;object-fit:cover;
+  border-radius:44% 56% 52% 48%/50% 44% 56% 50%;border:5px solid var(--card);box-shadow:var(--ombre)}
+.notes{position:absolute;right:-6px;top:4px;font-size:26px;animation:flotte 3s ease-in-out infinite}
+@keyframes flotte{50%{transform:translateY(-8px) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.notes{animation:none}html{scroll-behavior:auto}}
+
+/* --- mot de la maîtresse --- */
+.mot{display:flex;gap:14px;align-items:flex-start;background:var(--miel-cl);border-radius:20px;padding:16px;margin:22px 0 6px}
+.mot img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--card)}
+.mot b{font-family:'Fredoka',sans-serif;font-weight:600;display:block;color:var(--miel)}
+.mot p{margin:2px 0 0}
+
+/* --- recherche & filtres --- */
+.outils{margin:26px 0 14px}
+.outils h2{font-size:26px;margin-bottom:12px}
+.recherche{position:relative}
+.recherche input{width:100%;font:inherit;color:var(--tx);background:var(--card);border:2px solid var(--bd);
+  border-radius:16px;padding:13px 16px 13px 46px;min-height:52px}
+.recherche input:focus{border-color:var(--bleu);outline:none}
+.recherche svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.puces{display:flex;gap:8px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.puces::-webkit-scrollbar{display:none}
+.puce{flex:none;border:2px solid var(--bd);background:var(--card);border-radius:999px;padding:7px 15px;
+  font-weight:700;font-size:15px;cursor:pointer;min-height:40px}
+.puce[aria-pressed="true"]{background:var(--bleu);border-color:var(--bleu);color:#fff}
+
+/* --- cartes chants --- */
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:30px}
+.chant{display:flex;align-items:center;gap:14px;text-align:left;background:var(--card);border:1px solid var(--bd);
+  border-radius:20px;padding:14px;cursor:pointer;box-shadow:var(--ombre);transition:transform .15s,border-color .15s;width:100%}
+.chant:hover{transform:translateY(-2px);border-color:var(--sauge)}
+.chant .ico{width:56px;height:56px;border-radius:16px;background:var(--sauge-cl);display:grid;place-items:center;font-size:30px;flex:none}
+.chant h3{font-size:19px}
+.chant .meta{font-size:14px;color:var(--mut);display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;align-items:center}
+.tag{font-size:12px;font-weight:800;border-radius:8px;padding:1px 8px;background:var(--bleu-cl);color:var(--bleu)}
+.tag.nv{background:var(--miel-cl);color:var(--miel)}
+.vide{text-align:center;color:var(--mut);padding:30px 10px;grid-column:1/-1}
+
+/* --- fiche d'un chant --- */
+dialog{border:0;padding:0;margin:auto;width:min(760px,100%);max-width:100%;max-height:100dvh;height:100%;
+  background:var(--bg);color:var(--tx)}
+@media (min-width:700px){dialog{height:auto;max-height:92dvh;border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.3)}}
+dialog::backdrop{background:rgba(25,30,20,.55)}
+.fiche-haut{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;padding:12px 16px;
+  padding-top:calc(12px + env(safe-area-inset-top,0px));background:var(--bg);border-bottom:1px solid var(--bd)}
+.fiche-haut h2{font-size:22px;flex:1;min-width:0}
+.rond{width:44px;height:44px;border-radius:50%;border:0;background:var(--card);box-shadow:var(--ombre);cursor:pointer;
+  display:grid;place-items:center;flex:none}
+.fiche-corps{padding:16px}
+.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#111;margin-bottom:16px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lancer{position:absolute;inset:0;width:100%;border:0;cursor:pointer;background:#111 center/cover no-repeat;display:grid;place-items:center}
+.lancer span{width:76px;height:76px;border-radius:50%;background:#E62117;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.sans-video{display:flex;gap:12px;align-items:center;background:var(--sauge-cl);border-radius:18px;padding:14px;margin-bottom:16px;color:var(--mut)}
+.sans-video img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.objectif{background:var(--bleu-cl);border-radius:16px;padding:10px 14px;margin-bottom:14px;white-space:pre-line}
+.objectif b{color:var(--bleu);font-family:'Fredoka',sans-serif;font-weight:600}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.bouton{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--bd);background:var(--card);border-radius:14px;
+  padding:9px 14px;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;color:var(--tx);min-height:44px}
+.bouton:hover{border-color:var(--bleu)}
+.paroles{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:20px 22px;
+  font-size:calc(19px * var(--zoom,1));line-height:1.75;white-space:pre-line}
+.paroles p{margin:0 0 1em}
+.paroles p:last-child{margin:0}
+.paroles .partie{display:block;font:600 .7em/1.4 'Fredoka',sans-serif;color:var(--bleu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.paroles .bientot{color:var(--mut);font-style:italic;text-align:center}
+.signature{display:flex;align-items:center;gap:10px;justify-content:flex-end;color:var(--mut);font-size:14px;margin-top:14px}
+.signature img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+
+/* --- pied de page --- */
+footer{border-top:1px solid var(--bd);padding:26px 0 34px;text-align:center;color:var(--mut);font-size:15px}
+footer img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--sauge-cl);display:block;margin:0 auto 8px}
+
+@media (max-width:640px){
+  body{font-size:15px;line-height:1.5}
+  .top .wrap{height:54px}
+  .avatar{width:34px;height:34px}
+  .top .nom{font-size:16px}
+  .top .nom small{font-size:11px}
+  .hero{grid-template-columns:1fr;gap:14px;padding-top:18px;text-align:center}
+  .hero h1{font-size:24px}
+  .hero p{margin:8px auto 0;font-size:15px}
+  .cadre{max-width:150px;order:-1}
+  .cadre::before{inset:-7px}
+  .cadre img{border-width:4px}
+  .notes{font-size:20px;right:-10px}
+  .mot{padding:12px;gap:10px;margin-top:18px;border-radius:16px}
+  .mot img{width:40px;height:40px}
+  .mot p{font-size:14px}
+  .outils{margin:20px 0 10px}
+  .outils h2{font-size:20px;margin-bottom:10px}
+  .recherche input{font-size:15px;min-height:46px;padding:10px 14px 10px 42px;border-radius:14px}
+  .puces{gap:6px;padding-top:10px}
+  .puce{font-size:13px;padding:5px 12px;min-height:34px}
+  .grille{gap:10px}
+  .chant{padding:10px 12px;gap:12px;border-radius:16px}
+  .chant .ico{width:44px;height:44px;font-size:24px;border-radius:12px}
+  .chant h3{font-size:16px}
+  .chant .meta{font-size:12px;margin-top:2px}
+  .fiche-haut{padding:10px 14px}
+  .fiche-haut h2{font-size:18px}
+  .rond{width:38px;height:38px}
+  .fiche-corps{padding:14px}
+  .sans-video{font-size:14px;padding:10px 12px}
+  .sans-video img{width:36px;height:36px}
+  .objectif{font-size:14px;padding:9px 12px}
+  .bouton{font-size:13px;padding:6px 11px;min-height:38px;border-radius:12px}
+  .paroles{font-size:calc(16px * var(--zoom,1));padding:16px 18px;line-height:1.65}
+  .signature{font-size:12px}
+  footer{font-size:13px;padding:20px 0 28px}
+  footer img{width:48px;height:48px}
+}
+
+#impression{display:none}
+@page{margin:18mm 16mm}
+@media print{
+  body > *:not(#impression){display:none!important}
+  body{background:#fff;color:#000;padding:0}
+  #impression{display:block;font:18px/1.6 'Nunito',system-ui,sans-serif;color:#000}
+  #impression h1{font-size:26px;margin:0 0 18px}
+  #impression p{margin:0 0 1em;white-space:pre-line;break-inside:avoid}
+  #impression .partie{display:block;font:600 13px 'Fredoka',sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#2F5FD0}
+  #impression .signe{margin-top:24px;font-size:13px;color:#555}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img class="avatar" src="img/visage.jpg" alt="" width="40" height="40">
+    <a class="nom" href="#">La classe de maîtresse Emeline<small>Continuons la classe à la maison&nbsp;!</small></a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>Bonjour les parents&nbsp;! <span>On chante à la maison&nbsp;?</span></h1>
+      <p>Retrouvez ici tous les chants que nous apprenons en classe, avec la vidéo et les paroles. Vos enfants seront ravis de vous les faire découvrir&nbsp;!</p>
+    </div>
+    <div class="cadre">
+      <img src="img/portrait.jpg" alt="Portrait de maîtresse Emeline" width="260" height="260">
+      <span class="notes" aria-hidden="true">🎶</span>
+    </div>
+  </section>
+
+  <div class="mot">
+    <img src="img/visage.jpg" alt="" width="52" height="52">
+    <div>
+      <b>Le petit mot de la maîtresse</b>
+      <p>Chanter, c'est apprendre de nouveaux mots, travailler la mémoire et partager un beau moment. N'hésitez pas à chanter avec eux&nbsp;!</p>
+    </div>
+  </div>
+
+  <section class="outils" aria-labelledby="titre-chants">
+    <h2 id="titre-chants">🎵 Nos chants</h2>
+    <label class="recherche">
+      <span class="sr">Rechercher un chant</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Chercher un chant…" autocomplete="off">
+    </label>
+    <div class="puces" id="puces" role="group" aria-label="Filtrer par thème"></div>
+  </section>
+
+  <section class="grille" id="grille" aria-live="polite"></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/visage.jpg" alt="" width="64" height="64">
+    Bonne écoute et à très vite en classe&nbsp;!<br>— Maîtresse Emeline 💙
+  </div>
+</footer>
+
+<dialog id="fiche" aria-labelledby="fiche-titre">
+  <div class="fiche-haut">
+    <h2 id="fiche-titre"></h2>
+    <button class="rond" id="fermer" aria-label="Fermer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="fiche-corps">
+    <div id="fiche-media"></div>
+    <div class="actions">
+      <button class="bouton" id="moins" aria-label="Texte plus petit">A−</button>
+      <button class="bouton" id="plus" aria-label="Texte plus grand">A+</button>
+      <button class="bouton" id="imprimer">🖨️ Imprimer les paroles</button>
+      <a class="bouton" id="yt" target="_blank" rel="noopener" hidden>▶️ Ouvrir dans YouTube</a>
+    </div>
+    <div class="paroles" id="fiche-paroles"></div>
+    <div class="signature"><img src="img/visage.jpg" alt="" width="34" height="34">Chanté en classe avec maîtresse Emeline</div>
+  </div>
+</dialog>
+
+<div id="impression" aria-hidden="true"></div>
+
+<script src="chants.js"></script>
+<script>
+(function(){
+  var chants = (window.CHANTS || []).map(function(c){
+    c.slug = slug(c.titre);
+    c.idYT = idYoutube(c.youtube || "");
+    return c;
+  });
+  var theme = "Tous", recherche = "";
+  var grille = document.getElementById("grille");
+  var puces = document.getElementById("puces");
+  var fiche = document.getElementById("fiche");
+  var zoom = 1;
+  try { zoom = parseFloat(localStorage.getItem("zoom-paroles")) || 1; } catch(e){}
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(m){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]; }); }
+  function sansAccent(s){ return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
+  function slug(s){ return sansAccent(s).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
+  function idYoutube(u){
+    var m = u.match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/|\/live\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : (/^[A-Za-z0-9_-]{11}$/.test(u) ? u : "");
+  }
+
+  // Filtres par thème
+  var themes = ["Tous"];
+  chants.forEach(function(c){ if (c.theme && themes.indexOf(c.theme) < 0) themes.push(c.theme); });
+  if (themes.length > 2) {
+    puces.innerHTML = themes.map(function(t){
+      return '<button class="puce" aria-pressed="'+(t===theme)+'" data-t="'+esc(t)+'">'+esc(t)+'</button>';
+    }).join("");
+    puces.addEventListener("click", function(e){
+      var b = e.target.closest(".puce"); if (!b) return;
+      theme = b.dataset.t;
+      puces.querySelectorAll(".puce").forEach(function(p){ p.setAttribute("aria-pressed", p===b); });
+      afficher();
+    });
+  }
+
+  document.getElementById("q").addEventListener("input", function(e){
+    recherche = sansAccent(e.target.value.trim()); afficher();
+  });
+
+  function afficher(){
+    var liste = chants.filter(function(c){
+      if (theme !== "Tous" && c.theme !== theme) return false;
+      return !recherche || sansAccent(c.titre + " " + c.paroles).indexOf(recherche) >= 0;
+    });
+    if (!liste.length) {
+      grille.innerHTML = '<p class="vide">'+(chants.length ? "Aucun chant ne correspond… 🤔" : "Les chants arrivent bientôt ! 🎶")+'</p>';
+      return;
+    }
+    grille.innerHTML = liste.map(function(c){
+      return '<button class="chant" data-s="'+c.slug+'">' +
+        '<span class="ico" aria-hidden="true">'+esc(c.emoji || "🎵")+'</span>' +
+        '<span><h3>'+esc(c.titre)+'</h3><span class="meta">' +
+          (c.nouveau ? '<span class="tag nv">Nouveau</span>' : '') +
+          (c.idYT ? '<span class="tag">▶ Vidéo</span>' : '') +
+          '<span>'+esc(c.theme || "")+'</span></span></span></button>';
+    }).join("");
+  }
+  grille.addEventListener("click", function(e){
+    var b = e.target.closest(".chant"); if (b) location.hash = b.dataset.s;
+  });
+
+  function ouvrir(c){
+    document.getElementById("fiche-titre").textContent = (c.emoji ? c.emoji + " " : "") + c.titre;
+    var media = document.getElementById("fiche-media");
+    var objectif = c.objectif ? '<p class="objectif"><b>🎯 En classe&nbsp;:</b> '+esc(c.objectif)+'</p>' : '';
+    var yt = document.getElementById("yt");
+    if (c.idYT) {
+      media.innerHTML = objectif + '<div class="video"><button class="lancer" aria-label="Lancer la vidéo" style="background-image:url(https://i.ytimg.com/vi/'+c.idYT+'/hqdefault.jpg)">' +
+        '<span><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>';
+      media.querySelector(".lancer").onclick = function(){
+        this.parentNode.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+c.idYT+'?autoplay=1&rel=0" title="'+esc(c.titre)+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      };
+      yt.href = "https://www.youtube.com/watch?v=" + c.idYT; yt.hidden = false;
+    } else {
+      media.innerHTML = objectif + '<div class="sans-video"><img src="img/visage.jpg" alt="">Pas de vidéo pour ce chant : on le chante avec les paroles ci-dessous&nbsp;!</div>';
+      yt.hidden = true;
+    }
+    var texte = String(c.paroles || "").trim();
+    document.getElementById("fiche-paroles").innerHTML = texte
+      ? texte.split(/\n\s*\n/).map(function(p){
+          var l = p.trim().split("\n"), titre = "";
+          if (/^(couplet|refrain|pont|intro|final)\b.{0,12}$/i.test(l[0].trim())) titre = '<span class="partie">'+esc(l.shift().trim())+'</span>';
+          return "<p>"+titre+esc(l.join("\n"))+"</p>";
+        }).join("")
+      : c.sansParoles
+        ? '<p class="bientot">Pas de paroles ici, on suit les gestes de maîtresse Emeline&nbsp;! 👐</p>'
+        : '<p class="bientot">Les paroles arrivent très bientôt ✏️</p>';
+    document.getElementById("imprimer").hidden = !texte;
+    document.getElementById("moins").hidden = document.getElementById("plus").hidden = !texte;
+    appliquerZoom();
+    document.getElementById("impression").innerHTML = texte
+      ? "<h1>"+esc(c.titre)+"</h1>" + document.getElementById("fiche-paroles").innerHTML +
+        '<p class="signe">La classe de maîtresse Emeline</p>'
+      : "";
+    if (!fiche.open) fiche.showModal();
+    fiche.querySelector(".fiche-corps").scrollTop = 0;
+    document.title = c.titre + " · La classe de maîtresse Emeline";
+  }
+  function fermerFiche(){
+    if (fiche.open) fiche.close();
+    document.getElementById("fiche-media").innerHTML = ""; // coupe la vidéo
+    document.getElementById("impression").innerHTML = "";
+    document.title = "La classe de maîtresse Emeline";
+  }
+  function route(){
+    var s = decodeURIComponent(location.hash.slice(1));
+    var c = chants.filter(function(x){ return x.slug === s; })[0];
+    c ? ouvrir(c) : fermerFiche();
+  }
+  function retour(){
+    if (location.hash) history.pushState("", document.title, location.pathname + location.search);
+    fermerFiche();
+  }
+  document.getElementById("fermer").onclick = retour;
+  fiche.addEventListener("cancel", function(e){ e.preventDefault(); retour(); });
+  fiche.addEventListener("click", function(e){ if (e.target === fiche) retour(); });
+  window.addEventListener("hashchange", route);
+
+  function appliquerZoom(){
+    document.getElementById("fiche-paroles").style.setProperty("--zoom", zoom);
+    try { localStorage.setItem("zoom-paroles", zoom); } catch(e){}
+  }
+  document.getElementById("plus").onclick = function(){ zoom = Math.min(2, +(zoom + .15).toFixed(2)); appliquerZoom(); };
+  document.getElementById("moins").onclick = function(){ zoom = Math.max(.8, +(zoom - .15).toFixed(2)); appliquerZoom(); };
+  document.getElementById("imprimer").onclick = function(){ window.print(); };
+
+  afficher();
+  route();
+})();
+</script>
+</body>
+</html>
